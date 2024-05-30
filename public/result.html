@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат проверки</title>
+</head>
+<body>
+    <h1>Результат проверки привилегий</h1>
+    <div id="result"></div>
+    <button onclick="goBack()">Назад</button>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        // Получаем результат из URL-параметра
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get('username');
+        const privilege = params.get('privilege');
+        document.getElementById('result').textContent = `Пользователь ${username} имеет привилегию ${privilege}`;
+    </script>
+</body>
+</html>
